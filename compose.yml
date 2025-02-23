@@ -5,6 +5,9 @@ services:
     container_name: backend
     volumes:
       - ./backend:/var/www/html:rw,z
+      - /var/www/html/vendor
+      - /var/www/html/node_modules
+      - /var/www/html/var
     networks:
       - app-network
     depends_on:
@@ -16,6 +19,9 @@ services:
     container_name: frontend
     volumes:
       - ./frontend:/home/node/app
+      - /home/node/app/node_modules
+      - /home/node/app/dist
+      - /home/node/app/.angular
     networks:
       - app-network
     depends_on:

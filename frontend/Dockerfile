@@ -5,7 +5,7 @@ RUN npm install -g @angular/cli
 
 # Définir le répertoire de travail
 RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-#RUN npm install @angular/cli
+
 WORKDIR /home/node/app
 
 COPY --chown=node:node package*.json ./
