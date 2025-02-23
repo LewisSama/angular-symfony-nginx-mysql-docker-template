@@ -21,6 +21,8 @@ WORKDIR /var/www/html
 # Étape 5 : Copie des fichiers du projet
 COPY . /var/www/html
 
+RUN mkdir /var/www/html/var
+
 # Étape 6 : Changement des permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/var
